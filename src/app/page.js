@@ -36,7 +36,9 @@ export default async function HomePage() {
   const hero = page?.hero || {}
   const trustBar = page?.trustBar || [
     { text: 'US-FDA Cleared Devices' }, { text: 'MBBS Aesthetic Physician' },
-    { text: '500+ Happy Patients' }, { text: 'Doctor-Led Every Session' }, { text: '4.9 Google Rating' }
+    { text: '500+ Happy Patients' }, { text: 'Doctor-Led Every Session' }, { text: '4.9 Google Rating' },  { text: '5+ Years Experience' },
+  { text: '15+ Treatments Offered' },
+
   ]
   const testimonials = page?.testimonials?.items || [
     { name: 'Priya S.', initials: 'PS', rating: 5, text: 'My skin has never looked this clear. The treatment plan was personalised and the results were visible after just 2 sessions.', treatment: 'Acne Clearance', date: '2 weeks ago' },
@@ -59,11 +61,18 @@ export default async function HomePage() {
   ]
 
   const services = [
-    { title: 'PRP Hair Restoration', image: "images/prp-hair-restoration.webp", link: '/contact' },
-    { title: 'Lip Enhancement', image: "images/lip-enhancement.webp", link: '/contact' },
-    { title: 'Micro-Mesotherapy', image: "images/Micro-Mesotherapy.webp", link: '/contact' },
-    { title: 'Laser Hair Reduction', image: "images/laserhairreduction.webp", link: '/contact' },
+    { title: 'Hair Loss', image: "images/service-1.png", link: '/contact' },
+    { title: 'Lip Enhancement', image: "images/service-2.png", link: '/contact' },
+    { title: 'Body Conturing', image: "images/service-3.png", link: '/contact' },
+    { title: 'Anti-aging', image: "images/service-4.png", link: '/contact' },
   ];
+
+  const treatmentImages = {
+  hydrafacial: "/images/1.png",
+  "carbon-laser-facial": "/images/2.png",
+  "acne-clearance": "/images/3.png",
+  "acne-scar-mnrf": "/images/4.png",
+};
 
   return (
     <div style={{ background: 'var(--cream)', overflowX: 'hidden' }}>
@@ -98,7 +107,7 @@ export default async function HomePage() {
             }}
           >
             {/* Background */}
-            {videoSrc ? (
+           {true ? (
               <video
                 autoPlay
                 muted
@@ -118,8 +127,7 @@ export default async function HomePage() {
                   zIndex: 0,
                 }}
               >
-                <source src={videoSrc} type="video/mp4" />
-              </video>
+<source src="/images/arhum.mp4" type="video/mp4" />              </video>
             ) : fallbackImg ? (
               <Image
                 src={urlFor(fallbackImg).width(1600).height(900).fit("crop").url()}
@@ -426,7 +434,7 @@ export default async function HomePage() {
                 className="group reveal relative h-[450px] rounded-md overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-500"
                 style={{ "--d": `${i * 50}ms` }}
               >
-                {treatmentImageMap.get(t.slug) ? (
+                {/* {treatmentImageMap.get(t.slug) ? (
                   <Image
                     src={urlFor(treatmentImageMap.get(t.slug))
                       // .width(620)
@@ -440,7 +448,15 @@ export default async function HomePage() {
                   />
                 ) : (
                   <div className="absolute inset-0" style={{ background: '#F1D0B4' }} />
-                )}
+                )} */}
+                <Image
+  src={treatmentImages[t.slug] || "/images/prp-hair-restoration.jpeg"}
+  alt={t.name}
+  fill
+  className="object-cover transition-transform duration-700 group-hover:scale-110"
+  sizes="(max-width:768px) 100vw, (max-width:1280px) 50vw, 25vw"
+  priority={i === 0}
+/>
 
                 {/* Light, airy gradient overlay */}
                 {/* Default Black Overlay */}
@@ -794,7 +810,7 @@ Whether you're seeking healthier skin, effective acne solutions, advanced anti-a
               ))}
           </div>
 
-          <div className="mt-8 relative overflow-hidden">
+          {/* <div className="mt-8 relative overflow-hidden">
             <div
               className="absolute inset-y-0 left-0 w-16 md:w-24 z-10"
               style={{
@@ -818,7 +834,7 @@ Whether you're seeking healthier skin, effective acne solutions, advanced anti-a
                   "linear-gradient(to left,#FFFBF8 0%,rgba(255,251,248,0)100%)",
               }}
             />
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -883,7 +899,7 @@ Whether you're seeking healthier skin, effective acne solutions, advanced anti-a
         </div>
       </section>
 
-      <div
+      {/* <div
         style={{
           background: "#FFFBF8",
           padding: "24px 0",
@@ -896,7 +912,6 @@ Whether you're seeking healthier skin, effective acne solutions, advanced anti-a
             margin: "0 auto",
           }}
         >
-          {/* Left Fade */}
           <div
             className="absolute inset-y-0 left-0 z-10"
             style={{
@@ -906,7 +921,6 @@ Whether you're seeking healthier skin, effective acne solutions, advanced anti-a
             }}
           />
 
-          {/* Ornament */}
           <Image
             src="/images/sendtionend.png"
             alt="Divider"
@@ -919,7 +933,6 @@ Whether you're seeking healthier skin, effective acne solutions, advanced anti-a
             }}
           />
 
-          {/* Right Fade */}
           <div
             className="absolute inset-y-0 right-0 z-10"
             style={{
@@ -929,7 +942,7 @@ Whether you're seeking healthier skin, effective acne solutions, advanced anti-a
             }}
           />
         </div>
-      </div>
+      </div> */}
 
 
       <section
@@ -1113,7 +1126,7 @@ Whether you're seeking healthier skin, effective acne solutions, advanced anti-a
                     color: "#543213",
                     background: "#FEB847",
                     padding: "12px 24px",
-                    borderRadius: "8px",
+                    borderRadius: "999px",
                     textDecoration: "none",
                     width: "100%",
                     maxWidth: "220px",

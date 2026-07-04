@@ -1,5 +1,5 @@
 'use client'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -147,6 +147,18 @@ export default function Nav({ onBook }) {
   const [hoverMenu, setHoverMenu] = useState('')
   const closeTimer = useRef(null)
   const [mobileExpanded, setMobileExpanded] = useState('')
+  const [scrolled, setScrolled] = useState(false)
+
+  // Track scroll so mega-dropdowns can adjust for the top bar disappearing/reappearing
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 4)
+    window.addEventListener('scroll', onScroll)
+    onScroll()
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  // 40px top bar + 70px header = 110px at top of page; just 70px once top bar has scrolled away
+  const headerHeight = scrolled ? 70 : 110
 
   const openMega = (key) => {
     if (closeTimer.current) { clearTimeout(closeTimer.current); closeTimer.current = null }
@@ -167,7 +179,7 @@ export default function Nav({ onBook }) {
 
   const navLinkStyle = (active) => ({
     display: 'inline-flex', alignItems: 'center', gap: 3, padding: '8px 12px', borderRadius: 8,
-    fontSize: 13, fontWeight: 400, textDecoration: 'none', transition: 'all .15s', cursor: 'pointer', border: 'none', background: 'none',
+    fontSize: 13, fontWeight: 600, textDecoration: 'none', transition: 'all .15s', cursor: 'pointer', border: 'none', background: 'none',
     color: active ? '#543213' : '#7a6858',
     backgroundColor: active ? '#f1d0b4' : 'transparent',
   })
@@ -184,6 +196,59 @@ export default function Nav({ onBook }) {
 
   return (
     <>
+      {/* ── TOP BAR — contact info (hidden below lg, matches nav-desktop breakpoint) ── */}
+      <div className="topbar" style={{ background: '#543213', fontFamily: 'var(--font-poppins), system-ui, sans-serif', height: 40, display: 'flex', alignItems: 'center' }}>
+        <div style={{ maxWidth: 1440, margin: '0 auto', padding: '0 20px', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, fontSize: 12.5, color: '#fff', flexWrap: 'nowrap' }}>
+
+          {/* Left: address */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 22, minWidth: 0 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6, whiteSpace: 'nowrap' }}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#feb847" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>Lotus Plaza, near Mithaas Sweets, Hazipur, Sector 104, Noida, UP 201304</span>
+            </div>
+          </div>
+
+          {/* Right: phone + socials */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexShrink: 0 }}>
+            <a href="tel:09811997993" style={{ display: 'flex', alignItems: 'center', gap: 6, color: '#fff', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#feb847" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.48l3-.1a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l1.79-1.79a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              098119 97993
+            </a>
+           <div style={{ display: 'flex', gap: 10 }}>
+  {/* Instagram */}
+  <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{ color: '#fff', display: 'flex' }}>
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <rect x="2" y="2" width="20" height="20" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1" />
+    </svg>
+  </a>
+
+  {/* Facebook */}
+ 
+
+  {/* YouTube */}
+  <a href="https://youtube.com/@yourchannel" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style={{ color: '#fff', display: 'flex' }}>
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M22.5 12a35 35 0 0 0-.4-6.5c-.3-1.1-1.1-1.9-2.2-2.2C17.8 3 12 3 12 3s-5.8 0-7.9.3c-1.1.3-1.9 1.1-2.2 2.2A35 35 0 0 0 1.5 12a35 35 0 0 0 .4 6.5c.3 1.1 1.1 1.9 2.2 2.2C6.2 21 12 21 12 21s5.8 0 7.9-.3c1.1-.3 1.9-1.1 2.2-2.2a35 35 0 0 0 .4-6.5z"/>
+      <path d="m10 9 5 3-5 3z"/>
+    </svg>
+  </a>
+
+   <a href="https://facebook.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={{ color: '#fff', display: 'flex' }}>
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.2c0-.9.3-1.5 1.6-1.5H17V5.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.5v3h2.8v8h3.2z"/>
+    </svg>
+  </a>
+</div>
+          </div>
+        </div>
+      </div>
+
       {/* ── STICKY NAV ── */}
       <header style={{ position: 'sticky', top: 0, zIndex: 200, background: '#fff', borderBottom: '1px solid rgba(84,50,19,0.1)', fontFamily: 'var(--font-poppins), system-ui, sans-serif' }}>
         {/* ── Desktop: 3-column grid — left nav | LOGO | right nav ── */}
@@ -209,22 +274,35 @@ export default function Nav({ onBook }) {
           </div>
 
           {/* CENTER — Logo */}
-          <Link href="/" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }} onClick={closeMega}>
-            <Image src="/artham-logo.png" alt="Artham Aesthetique" width={130} height={56} priority
-              style={{ objectFit: 'contain', height: 56, width: 'auto' }} />
-          </Link>
+       <Link
+  href="/"
+  style={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    textDecoration: "none",
+  }}
+>
+  <Image
+    src="/images/chat-logo.png"
+    alt="Artham Aesthetique"
+    width={180}
+    height={70}
+    priority
+    style={{
+      width: "180px",
+      height: "70px",
+      objectFit: "contain",
+    }}
+  />
+</Link>
 
-          {/* RIGHT — right links + phone + book + search */}
+          {/* RIGHT — right links + book + search (phone lives in top bar now) */}
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 4 }} onMouseLeave={closeMegaSoon}>
             <Link href="/doctor" style={navLinkStyle(isOn('/doctor'))} onMouseEnter={closeMega}>About Doctor</Link>
             <Link href="/about" style={navLinkStyle(isOn('/about'))} onMouseEnter={closeMega}>About Us</Link>
             <Link href="/contact" style={navLinkStyle(isOn('/contact'))} onMouseEnter={closeMega}>Contact Us</Link>
             <div style={{ width: 1, height: 20, background: 'rgba(84,50,19,0.12)', margin: '0 4px' }} />
-            {/* Phone */}
-            <a href="tel:09811997993" style={{ display: 'flex', alignItems: 'center', gap: 6, color: '#543213', textDecoration: 'none', fontSize: 13, fontWeight: 400, whiteSpace: 'nowrap' }}>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#feb847" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.48l3-.1a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l1.79-1.79a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              +91 98119 97993
-            </a>
             {/* Book button */}
             <button onClick={onBook}
               style={{ background: '#feb847', color: '#543213', fontSize: 13, fontWeight: 600, padding: '9px 22px', borderRadius: 999, border: 'none', cursor: 'pointer', flexShrink: 0, letterSpacing: '0.02em' }}>
@@ -245,7 +323,7 @@ export default function Nav({ onBook }) {
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
           </button>
           <Link href="/" style={{ textDecoration: 'none' }}>
-            <Image src="/artham-logo.png" alt="Artham Aesthetique" width={100} height={40} priority style={{ objectFit: 'contain', height: 40, width: 'auto' }} />
+            <Image src="/images/logo.png" alt="Artham Aesthetique" width={100} height={40} priority style={{ objectFit: 'contain', height: 40, width: 'auto' }} />
           </Link>
           <div style={{ display: 'flex', gap: 8 }}>
             <button onClick={() => { setSearchOpen(o => !o); setMenuOpen(false) }}
@@ -275,7 +353,7 @@ export default function Nav({ onBook }) {
       </header>
 
       {/* ── CONDITIONS MEGA ── */}
-      <div style={{ position: 'fixed', left: 0, right: 0, zIndex: 190, top: 70, opacity: hoverMenu === 'conditions' ? 1 : 0, pointerEvents: hoverMenu === 'conditions' ? 'auto' : 'none', transform: hoverMenu === 'conditions' ? 'translateY(0)' : 'translateY(-8px)', transition: 'opacity .2s, transform .22s' }}
+      <div style={{ position: 'fixed', left: 0, right: 0, zIndex: 190, top: headerHeight, opacity: hoverMenu === 'conditions' ? 1 : 0, pointerEvents: hoverMenu === 'conditions' ? 'auto' : 'none', transform: hoverMenu === 'conditions' ? 'translateY(0)' : 'translateY(-8px)', transition: 'opacity .2s, transform .22s, top .2s' }}
         onMouseEnter={keepMega} onMouseLeave={closeMegaSoon}>
         <div style={{ background: '#fff', borderBottom: '1px solid rgba(26,17,9,0.08)', boxShadow: '0 16px 48px rgba(26,17,9,0.1)' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto', padding: '28px 20px 32px', display: 'grid', gridTemplateColumns: '2fr 1.2fr 1fr 0.8fr', gap: 40 }}>
@@ -302,9 +380,9 @@ export default function Nav({ onBook }) {
       </div>
 
       {/* ── TREATMENTS MEGA ── */}
-      <div style={{ position: 'fixed', left: 0, right: 0, zIndex: 190, top: 70, opacity: hoverMenu === 'treatments' ? 1 : 0, pointerEvents: hoverMenu === 'treatments' ? 'auto' : 'none', transform: hoverMenu === 'treatments' ? 'translateY(0)' : 'translateY(-8px)', transition: 'opacity .2s, transform .22s' }}
+      <div style={{ position: 'fixed', left: 0, right: 0, zIndex: 190, top: headerHeight, opacity: hoverMenu === 'treatments' ? 1 : 0, pointerEvents: hoverMenu === 'treatments' ? 'auto' : 'none', transform: hoverMenu === 'treatments' ? 'translateY(0)' : 'translateY(-8px)', transition: 'opacity .2s, transform .22s, top .2s' }}
         onMouseEnter={keepMega} onMouseLeave={closeMegaSoon}>
-        <div style={{ background: '#fff', borderBottom: '1px solid rgba(26,17,9,0.08)', boxShadow: '0 16px 48px rgba(26,17,9,0.1)', maxHeight: 'calc(100vh - 80px)', overflowY: 'auto' }}>
+        <div style={{ background: '#fff', borderBottom: '1px solid rgba(26,17,9,0.08)', boxShadow: '0 16px 48px rgba(26,17,9,0.1)', maxHeight: `calc(100vh - ${headerHeight + 10}px)`, overflowY: 'auto' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto', padding: '28px 20px 32px', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 32 }}>
             {TREATMENTS_MENU.map(col => (
               <div key={col.heading}>
@@ -332,7 +410,7 @@ export default function Nav({ onBook }) {
       </div>
 
       {/* ── SPECIALIZED CLINICS DROPDOWN ── */}
-      <div style={{ position: 'fixed', left: 0, right: 0, zIndex: 190, top: 70, opacity: hoverMenu === 'clinics' ? 1 : 0, pointerEvents: hoverMenu === 'clinics' ? 'auto' : 'none', transform: hoverMenu === 'clinics' ? 'translateY(0)' : 'translateY(-8px)', transition: 'opacity .2s, transform .22s' }}
+      <div style={{ position: 'fixed', left: 0, right: 0, zIndex: 190, top: headerHeight, opacity: hoverMenu === 'clinics' ? 1 : 0, pointerEvents: hoverMenu === 'clinics' ? 'auto' : 'none', transform: hoverMenu === 'clinics' ? 'translateY(0)' : 'translateY(-8px)', transition: 'opacity .2s, transform .22s, top .2s' }}
         onMouseEnter={keepMega} onMouseLeave={closeMegaSoon}>
         <div style={{ background: '#fff', borderBottom: '1px solid rgba(26,17,9,0.08)', boxShadow: '0 16px 48px rgba(26,17,9,0.1)' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto', padding: '24px 20px 28px', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8 }}>
@@ -355,7 +433,6 @@ export default function Nav({ onBook }) {
       {menuOpen && (
         <div style={{ position: 'fixed', top: 64, left: 0, right: 0, bottom: 0, zIndex: 300, background: '#fff', overflowY: 'auto' }}>
           <div style={{ padding: '12px 16px', display: 'flex', flexDirection: 'column', gap: 2 }}>
-            {/* Conditions */}
             {[
               { key: 'conditions', label: 'Conditions', sub: 'Browse by skin concern', data: CONDITIONS },
               { key: 'treatments', label: 'Treatments', sub: 'All procedures & services', data: TREATMENTS_MENU },
@@ -421,6 +498,7 @@ export default function Nav({ onBook }) {
         @media (max-width: 1024px) {
           .nav-desktop { display: none !important; }
           .nav-mobile  { display: flex !important; }
+          .topbar      { display: none !important; }
         }
       `}</style>
     </>
