@@ -429,8 +429,8 @@ export default async function HomePage() {
                 {treatmentImageMap.get(t.slug) ? (
                   <Image
                     src={urlFor(treatmentImageMap.get(t.slug))
-                      .width(620)
-                      .height(900)
+                      // .width(620)
+                      // .height(900)
                       .fit("crop")
                       .url()}
                     alt={t.name}
