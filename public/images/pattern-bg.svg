@@ -1,0 +1,13 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M-200 250C250-100 650 350 1100 50C1350-120 1700 120 1850 40"
+        stroke="#E8C88E" stroke-width="1.2" opacity="0.28"/>
+
+  <path d="M-100 700C350 300 900 850 1750 420"
+        stroke="#E8C88E" stroke-width="1.2" opacity="0.22"/>
+
+  <path d="M1200 -150C900 150 1200 500 850 950"
+        stroke="#E8C88E" stroke-width="1.2" opacity="0.22"/>
+
+  <path d="M200 950C600 650 1200 650 1700 900"
+        stroke="#E8C88E" stroke-width="1.2" opacity="0.18"/>
+</svg>
