@@ -9,11 +9,11 @@ export default function Footer() {
         <div>
           <div style={{ marginBottom: 16 }}>
             <Image
-              src="/artham-logo.png"
+              src="/images/new-footer-logo-removebg-preview.png"
               alt="Artham Aesthetique"
-              width={110}
-              height={44}
-              style={{ objectFit: 'contain', height: 44, width: 'auto', filter: 'brightness(0) invert(1) opacity(0.9)' }}
+              width={100}
+              height={100}
+              style={{ objectFit: 'contain', height: 100, width: 100,  }}
             />
           </div>
           <p style={{ fontSize: 13, fontWeight: 300, color: '#c8b09a', lineHeight: 1.7, marginBottom: 20 }}>

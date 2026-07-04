@@ -275,7 +275,7 @@ export default function Nav({ onBook }) {
 
           {/* CENTER — Logo */}
           <Link href="/" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }} onClick={closeMega}>
-            <Image src="/images/chat-logo.png" alt="Artham Aesthetique" width={150} height={56} priority
+            <Image src="/images/new-nav-logo.png" alt="Artham Aesthetique" width={150} height={56} priority
               style={{ objectFit: 'contain', height: 56, width: 150 }} />
           </Link>
 
@@ -304,9 +304,9 @@ export default function Nav({ onBook }) {
             style={{ width: 38, height: 38, borderRadius: '50%', background: '#543213', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round"><path d="M3 6h18M3 12h18M3 18h18" /></svg>
           </button>
-          <Link href="/" style={{ textDecoration: 'none' }}>
-            <Image src="/images/logo.png" alt="Artham Aesthetique" width={100} height={40} priority style={{ objectFit: 'contain', height: 40, width: 'auto' }} />
-          </Link>
+          {/* <Link href="/" style={{ textDecoration: 'none' }}>
+            <Image src="/images/new-nav-logo.png" alt="Artham Aesthetique" width={100} height={40} priority style={{ objectFit: 'contain', height: 40, width: 'auto' }} />
+          </Link> */}
           <div style={{ display: 'flex', gap: 8 }}>
             <button onClick={() => { setSearchOpen(o => !o); setMenuOpen(false) }}
               style={{ width: 38, height: 38, borderRadius: '50%', border: '1.5px solid rgba(84,50,19,0.2)', background: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#543213' }}>
