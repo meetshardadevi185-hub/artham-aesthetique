@@ -232,148 +232,150 @@ export default async function HomePage() {
             </div>
 
             {/* Content */}
+          {/* Content */}
+<div
+  style={{
+    position: "relative",
+    zIndex: 2,
+    minHeight: "100vh",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "0 8%",
+    textAlign: "center",
+  }}
+>
+  <div
+    style={{
+      maxWidth: "900px",
+      width: "100%",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+    }}
+  >
+    {/* Heading */}
+    <h1
+      style={{
+        fontFamily: "Cormorant Garamond, serif",
+        fontWeight: 600,
+        fontSize: "clamp(40px,6vw,50px)",
+        lineHeight: 1.1,
+        color: "#fff",
+        marginBottom: 30,
+      }}
+    >
+      {hero.headingLine1 || "The difference between"}{" "}
+      <span
+        style={{
+          color: "#FEB847",
+          fontStyle: "italic",
+          fontWeight: 400,
+        }}
+      >
+        {hero.headingItalic || "covering concerns"}
+      </span>
+
+      <br />
+
+      {hero.headingLine2 || "and"}{" "}
+      <span
+        style={{
+          color: "#FEB847",
+          fontStyle: "italic",
+          fontWeight: 400,
+        }}
+      >
+        {hero.headingItalic2 || "correcting them."}
+      </span>
+    </h1>
+
+    {/* Description */}
+    <p
+      style={{
+        fontSize: 18,
+        lineHeight: 1.9,
+        color: "rgba(255,255,255,.82)",
+        maxWidth: 700,
+        marginBottom: 35,
+      }}
+    >
+      {hero.subtext ||
+        "Noida's DR-led aesthetic clinic. Evidence-based care for skin, hair and ageing concerns under expert supervision."}
+    </p>
+
+    {/* Button */}
+    <Link
+      href="/contact"
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+        background: "#F1D0B4",
+        color: "#543213",
+        padding: "14px 35px",
+        borderRadius: "999px",
+        textDecoration: "none",
+        fontWeight: 600,
+        fontSize: 14,
+        marginBottom: 35,
+      }}
+    >
+      {hero.ctaPrimary || "Book Consultation"}
+    </Link>
+
+    {/* Category */}
+    <div
+      style={{
+        color: "#FEB847",
+        textTransform: "uppercase",
+        letterSpacing: ".3em",
+        fontWeight: 600,
+        fontSize: 10,
+        marginBottom: 40,
+      }}
+    >
+      {hero.eyebrow ||
+        "Dermatology · Aesthetics · Trichology"}
+    </div>
+
+    {/* Stats */}
+    {heroStats && (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          gap: 60,
+          flexWrap: "wrap",
+        }}
+      >
+        {/* {heroStats.map((s, i) => (
+          <div key={i}>
             <div
               style={{
-                position: "relative",
-                zIndex: 2,
-                minHeight: "100vh",
-                display: "flex",
-                alignItems: "center",
-                padding: "0 8%",
+                fontSize: 38,
+                color: "#FEB847",
+                fontWeight: 700,
               }}
             >
-              <div
-                style={{
-                  maxWidth: "760px",
-                  width: "100%",
-                  textAlign: "left",
-                }}
-              >
-                {/* Heading */}
-                <h1
-                  style={{
-                    fontFamily: "Cormorant Garamond, serif",
-                    fontWeight: 600,
-                    fontSize: "clamp(40px,6vw,50px)",
-                    lineHeight: 1.05,
-                    color: "#fff",
-                    marginBottom: 30,
-                  }}
-                >
-                  {hero.headingLine1 || "The difference between"}{" "}
-                  <span
-                    style={{
-                      color: "#FEB847",
-                      fontStyle: "italic",
-                      fontWeight: 400,
-                    }}
-                  >
-                    {hero.headingItalic || "covering concerns"}
-                  </span>
-
-                  <br />
-
-                  {hero.headingLine2 || "and"}{" "}
-                  <span
-                    style={{
-                      color: "#FEB847",
-                      fontStyle: "italic",
-                      fontWeight: 400,
-                    }}
-                  >
-                    {hero.headingItalic2 || "correcting them."}
-                  </span>
-                </h1>
-
-                {/* Description */}
-                <p
-                  style={{
-                    fontSize: 18,
-                    lineHeight: 1.9,
-                    color: "rgba(255,255,255,.82)",
-                    maxWidth: 620,
-                    marginBottom: 30,
-                  }}
-                >
-                  {hero.subtext ||
-                    "Noida's MD-led aesthetic clinic. Evidence-based care for skin, hair and ageing concerns under expert supervision."}
-                </p>
-
-                {/* Bottom Section */}
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 28,
-                  }}
-                >
-                  {/* Button */}
-                  <Link
-                    href="/contact"
-                    style={{
-                      display: "inline-flex",
-                      width: "fit-content",
-                      background: "#F1D0B4",
-                      color: "#543213",
-                      padding: "16px 42px",
-                      borderRadius: "999px",
-                      textDecoration: "none",
-                      fontWeight: 600,
-                      fontSize: 15,
-                    }}
-                  >
-                    {hero.ctaPrimary || "Book Consultation"}
-                  </Link>
-
-                  {/* Category */}
-                  <div
-                    style={{
-                      color: "#FEB847",
-                      textTransform: "uppercase",
-                      letterSpacing: ".3em",
-                      fontWeight: 600,
-                      fontSize: 13,
-                    }}
-                  >
-                    {hero.eyebrow ||
-                      "Dermatology · Aesthetics · Trichology"}
-                  </div>
-
-                  {/* Stats */}
-                  {/* <div
-              style={{
-                display: "flex",
-                gap: 60,
-                flexWrap: "wrap",
-              }}
-            >
-              {heroStats.map((s, i) => (
-                <div key={i}>
-                  <div
-                    style={{
-                      fontSize: 38,
-                      color: "#FEB847",
-                      fontWeight: 700,
-                    }}
-                  >
-                    {s.value}
-                  </div>
-
-                  <div
-                    style={{
-                      marginTop: 8,
-                      color: "rgba(255,255,255,.75)",
-                      fontSize: 15,
-                    }}
-                  >
-                    {s.label}
-                  </div>
-                </div>
-              ))}
-            </div> */}
-                </div>
-              </div>
+              {s.value}
             </div>
+
+            <div
+              style={{
+                marginTop: 8,
+                color: "rgba(255,255,255,.75)",
+                fontSize: 15,
+              }}
+            >
+              {s.label}
+            </div>
+          </div>
+        ))} */}
+      </div>
+    )}
+  </div>
+</div>
           </section>
         );
       })()}

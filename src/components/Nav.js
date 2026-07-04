@@ -187,7 +187,7 @@ export default function Nav({ onBook }) {
   const chevron = (open) => (
     <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"
       style={{ transform: open ? 'rotate(180deg)' : 'none', transition: 'transform .2s', flexShrink: 0 }}>
-      <path d="m6 9 6 6 6-6"/>
+      <path d="m6 9 6 6 6-6" />
     </svg>
   )
 
@@ -204,7 +204,7 @@ export default function Nav({ onBook }) {
           <div style={{ display: 'flex', alignItems: 'center', gap: 22, minWidth: 0 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 6, whiteSpace: 'nowrap' }}>
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#feb847" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
               </svg>
               <span>Lotus Plaza, near Mithaas Sweets, Hazipur, Sector 104, Noida, UP 201304</span>
             </div>
@@ -214,37 +214,37 @@ export default function Nav({ onBook }) {
           <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexShrink: 0 }}>
             <a href="tel:09811997993" style={{ display: 'flex', alignItems: 'center', gap: 6, color: '#fff', textDecoration: 'none', whiteSpace: 'nowrap' }}>
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#feb847" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.48l3-.1a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l1.79-1.79a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.48l3-.1a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l1.79-1.79a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
               098119 97993
             </a>
-           <div style={{ display: 'flex', gap: 10 }}>
-  {/* Instagram */}
-  <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{ color: '#fff', display: 'flex' }}>
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <rect x="2" y="2" width="20" height="20" rx="5" />
-      <circle cx="12" cy="12" r="4" />
-      <circle cx="17.5" cy="6.5" r="1" />
-    </svg>
-  </a>
+            <div style={{ display: 'flex', gap: 10 }}>
+              {/* Instagram */}
+              <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{ color: '#fff', display: 'flex' }}>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="2" y="2" width="20" height="20" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="1" />
+                </svg>
+              </a>
 
-  {/* Facebook */}
- 
+              {/* Facebook */}
 
-  {/* YouTube */}
-  <a href="https://youtube.com/@yourchannel" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style={{ color: '#fff', display: 'flex' }}>
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M22.5 12a35 35 0 0 0-.4-6.5c-.3-1.1-1.1-1.9-2.2-2.2C17.8 3 12 3 12 3s-5.8 0-7.9.3c-1.1.3-1.9 1.1-2.2 2.2A35 35 0 0 0 1.5 12a35 35 0 0 0 .4 6.5c.3 1.1 1.1 1.9 2.2 2.2C6.2 21 12 21 12 21s5.8 0 7.9-.3c1.1-.3 1.9-1.1 2.2-2.2a35 35 0 0 0 .4-6.5z"/>
-      <path d="m10 9 5 3-5 3z"/>
-    </svg>
-  </a>
 
-   <a href="https://facebook.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={{ color: '#fff', display: 'flex' }}>
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.2c0-.9.3-1.5 1.6-1.5H17V5.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.5v3h2.8v8h3.2z"/>
-    </svg>
-  </a>
-</div>
+              {/* YouTube */}
+              <a href="https://youtube.com/@yourchannel" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style={{ color: '#fff', display: 'flex' }}>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M22.5 12a35 35 0 0 0-.4-6.5c-.3-1.1-1.1-1.9-2.2-2.2C17.8 3 12 3 12 3s-5.8 0-7.9.3c-1.1.3-1.9 1.1-2.2 2.2A35 35 0 0 0 1.5 12a35 35 0 0 0 .4 6.5c.3 1.1 1.1 1.9 2.2 2.2C6.2 21 12 21 12 21s5.8 0 7.9-.3c1.1-.3 1.9-1.1 2.2-2.2a35 35 0 0 0 .4-6.5z" />
+                  <path d="m10 9 5 3-5 3z" />
+                </svg>
+              </a>
+
+              <a href="https://facebook.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={{ color: '#fff', display: 'flex' }}>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.2c0-.9.3-1.5 1.6-1.5H17V5.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.5v3h2.8v8h3.2z" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -259,7 +259,7 @@ export default function Nav({ onBook }) {
             {/* Hamburger circle */}
             <button onClick={() => { setMenuOpen(o => !o); setSearchOpen(false); setHoverMenu('') }}
               style={{ width: 40, height: 40, borderRadius: '50%', background: '#543213', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginRight: 6 }}>
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round"><path d="M3 6h18M3 12h18M3 18h18" /></svg>
             </button>
             {/* Left nav */}
             <button style={navLinkStyle(isOn('/concerns'))} onMouseEnter={() => openMega('conditions')} onClick={() => openMega(hoverMenu === 'conditions' ? '' : 'conditions')}>
@@ -293,7 +293,7 @@ export default function Nav({ onBook }) {
             {/* Search */}
             <button onClick={() => { setSearchOpen(o => !o); setHoverMenu('') }}
               style={{ width: 34, height: 34, borderRadius: '50%', border: '1.5px solid rgba(84,50,19,0.15)', background: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#543213' }}>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
             </button>
           </div>
         </div>
@@ -302,7 +302,7 @@ export default function Nav({ onBook }) {
         <div style={{ display: 'none', padding: '0 16px', height: 60, alignItems: 'center', justifyContent: 'space-between' }} className="nav-mobile">
           <button onClick={() => { setMenuOpen(o => !o); setSearchOpen(false) }}
             style={{ width: 38, height: 38, borderRadius: '50%', background: '#543213', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round"><path d="M3 6h18M3 12h18M3 18h18" /></svg>
           </button>
           <Link href="/" style={{ textDecoration: 'none' }}>
             <Image src="/images/logo.png" alt="Artham Aesthetique" width={100} height={40} priority style={{ objectFit: 'contain', height: 40, width: 'auto' }} />
@@ -310,7 +310,7 @@ export default function Nav({ onBook }) {
           <div style={{ display: 'flex', gap: 8 }}>
             <button onClick={() => { setSearchOpen(o => !o); setMenuOpen(false) }}
               style={{ width: 38, height: 38, borderRadius: '50%', border: '1.5px solid rgba(84,50,19,0.2)', background: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#543213' }}>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
             </button>
             <button onClick={onBook}
               style={{ background: '#feb847', color: '#543213', fontSize: 12, fontWeight: 600, padding: '8px 16px', borderRadius: 999, border: 'none', cursor: 'pointer' }}>
@@ -323,11 +323,11 @@ export default function Nav({ onBook }) {
         {searchOpen && (
           <div style={{ borderTop: '1px solid rgba(84,50,19,0.08)', background: '#fff' }}>
             <div style={{ maxWidth: 640, margin: '8px auto', padding: '0 20px', display: 'flex', alignItems: 'center', gap: 10, background: '#f1d0b4', borderRadius: 12 }}>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7a6858" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7a6858" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
               <input value={searchQ} onChange={e => setSearchQ(e.target.value)} placeholder="Search treatments, concerns…"
                 style={{ flex: 1, background: 'none', border: 'none', outline: 'none', padding: '10px 0', fontSize: 14, color: '#3d3028', fontWeight: 300 }} autoFocus />
               <button onClick={() => { setSearchOpen(false); setSearchQ('') }} style={{ border: 'none', background: 'none', cursor: 'pointer', color: '#7a6858', display: 'flex', padding: 4 }}>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"><path d="M18 6 6 18M6 6l12 12" /></svg>
               </button>
             </div>
           </div>
@@ -429,7 +429,7 @@ export default function Nav({ onBook }) {
                   </div>
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#844d28" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
                     style={{ transform: mobileExpanded === section.key ? 'rotate(180deg)' : 'none', transition: 'transform .2s' }}>
-                    <path d="m6 9 6 6 6-6"/>
+                    <path d="m6 9 6 6 6-6" />
                   </svg>
                 </button>
                 {mobileExpanded === section.key && (
@@ -465,7 +465,7 @@ export default function Nav({ onBook }) {
                   <div style={{ fontSize: 14, fontWeight: 400, color: '#3d3028' }}>{item.label}</div>
                   <div style={{ fontSize: 12, fontWeight: 300, color: '#7a6858', marginTop: 2 }}>{item.sub}</div>
                 </div>
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#844d28" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#844d28" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
               </Link>
             ))}
             <button onClick={() => { setMenuOpen(false); onBook() }}
