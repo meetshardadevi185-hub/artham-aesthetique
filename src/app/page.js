@@ -36,8 +36,8 @@ export default async function HomePage() {
   const hero = page?.hero || {}
   const trustBar = page?.trustBar || [
     { text: 'US-FDA Cleared Devices' }, { text: 'MBBS Aesthetic Physician' },
-    { text: '500+ Happy Patients' }, { text: 'Doctor-Led Every Session' }, { text: '4.9 Google Rating' },  { text: '5+ Years Experience' },
-  { text: '15+ Treatments Offered' },
+    { text: '500+ Happy Patients' }, { text: 'Doctor-Led Every Session' }, { text: '4.9 Google Rating' }, { text: '5+ Years Experience' },
+    { text: '15+ Treatments Offered' },
 
   ]
   const testimonials = page?.testimonials?.items || [
@@ -68,11 +68,11 @@ export default async function HomePage() {
   ];
 
   const treatmentImages = {
-  hydrafacial: "/images/1.png",
-  "carbon-laser-facial": "/images/2.png",
-  "acne-clearance": "/images/3.png",
-  "acne-scar-mnrf": "/images/4.png",
-};
+    hydrafacial: "/images/1.png",
+    "carbon-laser-facial": "/images/2.png",
+    "acne-clearance": "/images/3.png",
+    "acne-scar-mnrf": "/images/4.png",
+  };
 
   return (
     <div style={{ background: 'var(--cream)', overflowX: 'hidden' }}>
@@ -107,7 +107,7 @@ export default async function HomePage() {
             }}
           >
             {/* Background */}
-           {true ? (
+            {true ? (
               <video
                 autoPlay
                 muted
@@ -127,7 +127,7 @@ export default async function HomePage() {
                   zIndex: 0,
                 }}
               >
-<source src="/images/arhum.mp4" type="video/mp4" />              </video>
+                <source src="/images/arhum.mp4" type="video/mp4" />              </video>
             ) : fallbackImg ? (
               <Image
                 src={urlFor(fallbackImg).width(1600).height(900).fit("crop").url()}
@@ -232,124 +232,124 @@ export default async function HomePage() {
             </div>
 
             {/* Content */}
-          {/* Content */}
-<div
-  style={{
-    position: "relative",
-    zIndex: 2,
-    minHeight: "100vh",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: "0 8%",
-    textAlign: "center",
-  }}
->
-  <div
-    style={{
-      maxWidth: "900px",
-      width: "100%",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-    }}
-  >
-    {/* Heading */}
-    <h1
-      style={{
-        fontFamily: "Cormorant Garamond, serif",
-        fontWeight: 600,
-        fontSize: "clamp(40px,6vw,50px)",
-        lineHeight: 1.1,
-        color: "#fff",
-        marginBottom: 30,
-      }}
-    >
-      {hero.headingLine1 || "The difference between"}{" "}
-      <span
-        style={{
-          color: "#FEB847",
-          fontStyle: "italic",
-          fontWeight: 400,
-        }}
-      >
-        {hero.headingItalic || "covering concerns"}
-      </span>
+            {/* Content */}
+            <div
+              style={{
+                position: "relative",
+                zIndex: 2,
+                minHeight: "100vh",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "0 8%",
+                textAlign: "center",
+              }}
+            >
+              <div
+                style={{
+                  maxWidth: "900px",
+                  width: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                {/* Heading */}
+                <h1
+                  style={{
+                    fontFamily: "Cormorant Garamond, serif",
+                    fontWeight: 600,
+                    fontSize: "clamp(40px,6vw,50px)",
+                    lineHeight: 1.1,
+                    color: "#fff",
+                    marginBottom: 30,
+                  }}
+                >
+                  {hero.headingLine1 || "The difference between"}{" "}
+                  <span
+                    style={{
+                      color: "#FEB847",
+                      fontStyle: "italic",
+                      fontWeight: 400,
+                    }}
+                  >
+                    {hero.headingItalic || "covering concerns"}
+                  </span>
 
-      <br />
+                  <br />
 
-      {hero.headingLine2 || "and"}{" "}
-      <span
-        style={{
-          color: "#FEB847",
-          fontStyle: "italic",
-          fontWeight: 400,
-        }}
-      >
-        {hero.headingItalic2 || "correcting them."}
-      </span>
-    </h1>
+                  {hero.headingLine2 || "and"}{" "}
+                  <span
+                    style={{
+                      color: "#FEB847",
+                      fontStyle: "italic",
+                      fontWeight: 400,
+                    }}
+                  >
+                    {hero.headingItalic2 || "correcting them."}
+                  </span>
+                </h1>
 
-    {/* Description */}
-    <p
-      style={{
-        fontSize: 18,
-        lineHeight: 1.9,
-        color: "rgba(255,255,255,.82)",
-        maxWidth: 700,
-        marginBottom: 35,
-      }}
-    >
-      {hero.subtext ||
-        "Noida's DR-led aesthetic clinic. Evidence-based care for skin, hair and ageing concerns under expert supervision."}
-    </p>
+                {/* Description */}
+                <p
+                  style={{
+                    fontSize: 18,
+                    lineHeight: 1.9,
+                    color: "rgba(255,255,255,.82)",
+                    maxWidth: 700,
+                    marginBottom: 35,
+                  }}
+                >
+                  {hero.subtext ||
+                    "Noida's DR-led aesthetic clinic. Evidence-based care for skin, hair and ageing concerns under expert supervision."}
+                </p>
 
-    {/* Button */}
-    <Link
-      href="/contact"
-      style={{
-        display: "inline-flex",
-        alignItems: "center",
-        justifyContent: "center",
-        background: "#F1D0B4",
-        color: "#543213",
-        padding: "14px 35px",
-        borderRadius: "999px",
-        textDecoration: "none",
-        fontWeight: 600,
-        fontSize: 14,
-        marginBottom: 35,
-      }}
-    >
-      {hero.ctaPrimary || "Book Consultation"}
-    </Link>
+                {/* Button */}
+                <Link
+                  href="/contact"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "#F1D0B4",
+                    color: "#543213",
+                    padding: "14px 35px",
+                    borderRadius: "999px",
+                    textDecoration: "none",
+                    fontWeight: 600,
+                    fontSize: 14,
+                    marginBottom: 35,
+                  }}
+                >
+                  {hero.ctaPrimary || "Book Consultation"}
+                </Link>
 
-    {/* Category */}
-    <div
-      style={{
-        color: "#FEB847",
-        textTransform: "uppercase",
-        letterSpacing: ".3em",
-        fontWeight: 600,
-        fontSize: 10,
-        marginBottom: 40,
-      }}
-    >
-      {hero.eyebrow ||
-        "Dermatology · Aesthetics · Trichology"}
-    </div>
+                {/* Category */}
+                <div
+                  style={{
+                    color: "#FEB847",
+                    textTransform: "uppercase",
+                    letterSpacing: ".3em",
+                    fontWeight: 600,
+                    fontSize: 10,
+                    marginBottom: 40,
+                  }}
+                >
+                  {hero.eyebrow ||
+                    "Dermatology · Aesthetics · Trichology"}
+                </div>
 
-    {/* Stats */}
-    {heroStats && (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: 60,
-          flexWrap: "wrap",
-        }}
-      >
-        {/* {heroStats.map((s, i) => (
+                {/* Stats */}
+                {heroStats && (
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      gap: 60,
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    {/* {heroStats.map((s, i) => (
           <div key={i}>
             <div
               style={{
@@ -372,10 +372,10 @@ export default async function HomePage() {
             </div>
           </div>
         ))} */}
-      </div>
-    )}
-  </div>
-</div>
+                  </div>
+                )}
+              </div>
+            </div>
           </section>
         );
       })()}
@@ -452,13 +452,13 @@ export default async function HomePage() {
                   <div className="absolute inset-0" style={{ background: '#F1D0B4' }} />
                 )} */}
                 <Image
-  src={treatmentImages[t.slug] || "/images/prp-hair-restoration.jpeg"}
-  alt={t.name}
-  fill
-  className="object-cover transition-transform duration-700 group-hover:scale-110"
-  sizes="(max-width:768px) 100vw, (max-width:1280px) 50vw, 25vw"
-  priority={i === 0}
-/>
+                  src={treatmentImages[t.slug] || "/images/prp-hair-restoration.jpeg"}
+                  alt={t.name}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width:768px) 100vw, (max-width:1280px) 50vw, 25vw"
+                  priority={i === 0}
+                />
 
                 {/* Light, airy gradient overlay */}
                 {/* Default Black Overlay */}
@@ -615,7 +615,7 @@ Whether you're seeking healthier skin, effective acne solutions, advanced anti-a
                 }}
               >
                 <Link
-                  href="/book"
+                  href="/contact"
                   style={{
                     background: "#543213",
                     color: "#fff",
