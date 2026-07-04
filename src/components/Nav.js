@@ -274,28 +274,10 @@ export default function Nav({ onBook }) {
           </div>
 
           {/* CENTER — Logo */}
-       <Link
-  href="/"
-  style={{
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    textDecoration: "none",
-  }}
->
-  <Image
-    src="/images/chat-logo.png"
-    alt="Artham Aesthetique"
-    width={180}
-    height={70}
-    priority
-    style={{
-      width: "180px",
-      height: "70px",
-      objectFit: "contain",
-    }}
-  />
-</Link>
+          <Link href="/" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }} onClick={closeMega}>
+            <Image src="/images/chat-logo.png" alt="Artham Aesthetique" width={150} height={56} priority
+              style={{ objectFit: 'contain', height: 56, width: 150 }} />
+          </Link>
 
           {/* RIGHT — right links + book + search (phone lives in top bar now) */}
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 4 }} onMouseLeave={closeMegaSoon}>
